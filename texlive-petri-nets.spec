@@ -1,3 +1,9 @@
+# revision 24088
+# category Package
+# catalog-ctan /macros/generic/petri-nets
+# catalog-date 2007-01-12 23:55:10 +0100
+# catalog-license gpl
+# catalog-version undef
 Name:		texlive-petri-nets
 Version:	20070112
 Release:	1
@@ -51,6 +57,7 @@ models; and - the last gathers together the previous two.
 %doc %{_texmfdistdir}/doc/generic/petri-nets/pn2pdf
 %doc %{_texmfdistdir}/doc/generic/petri-nets/pndoc.pdf
 %doc %{_texmfdistdir}/doc/generic/petri-nets/pndoc.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -61,3 +68,5 @@ models; and - the last gathers together the previous two.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
