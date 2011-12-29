@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 Petri-nets is a set of TeX/LaTeX packages about Petri nets and
@@ -27,20 +25,12 @@ allows the user to draw Petri-nets in PostScript documents; -
 the second defines macros related to PBC, M-nets and B(PN)
 models; and - the last gathers together the previous two.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -58,7 +48,6 @@ models; and - the last gathers together the previous two.
 %doc %{_texmfdistdir}/doc/generic/petri-nets/pn2pdf
 %doc %{_texmfdistdir}/doc/generic/petri-nets/pndoc.pdf
 %doc %{_texmfdistdir}/doc/generic/petri-nets/pndoc.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -69,5 +58,3 @@ models; and - the last gathers together the previous two.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
