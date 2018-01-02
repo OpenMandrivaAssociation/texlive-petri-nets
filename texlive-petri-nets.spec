@@ -1,12 +1,6 @@
-# revision 24088
-# category Package
-# catalog-ctan /macros/generic/petri-nets
-# catalog-date 2007-01-12 23:55:10 +0100
-# catalog-license gpl
-# catalog-version undef
 Name:		texlive-petri-nets
-Version:	20070112
-Release:	10
+Version:	20170414
+Release:	1
 Summary:	A set TeX/LaTeX packages for drawing Petri nets
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/generic/petri-nets
@@ -35,19 +29,9 @@ models; and - the last gathers together the previous two.
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/tex/generic/petri-nets/pndraw.sty
-%{_texmfdistdir}/tex/generic/petri-nets/pndraw.tex
-%{_texmfdistdir}/tex/generic/petri-nets/pnets.sty
-%{_texmfdistdir}/tex/generic/petri-nets/pnets.tex
-%{_texmfdistdir}/tex/generic/petri-nets/pntext.sty
-%{_texmfdistdir}/tex/generic/petri-nets/pntext.tex
-%{_texmfdistdir}/tex/generic/petri-nets/pnversion.tex
-%doc %{_texmfdistdir}/doc/generic/petri-nets/COPYING
-%doc %{_texmfdistdir}/doc/generic/petri-nets/ChangeLog
-%doc %{_texmfdistdir}/doc/generic/petri-nets/README
-%doc %{_texmfdistdir}/doc/generic/petri-nets/pn2pdf
-%doc %{_texmfdistdir}/doc/generic/petri-nets/pndoc.pdf
-%doc %{_texmfdistdir}/doc/generic/petri-nets/pndoc.tex
+%{_texmfdistdir}/tex/generic/petri-nets
+%{_texmfdistdir}/scripts/petri-nets
+%doc %{_texmfdistdir}/doc/generic/petri-nets
 
 #-----------------------------------------------------------------------
 %prep
@@ -57,18 +41,4 @@ models; and - the last gathers together the previous two.
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20070112-2
-+ Revision: 754814
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20070112-1
-+ Revision: 719239
-- texlive-petri-nets
-- texlive-petri-nets
-- texlive-petri-nets
-- texlive-petri-nets
-
+cp -fpar texmf-dist/tex texmf-dist/doc texmf-dist/scripts %{buildroot}%{_texmfdistdir}
