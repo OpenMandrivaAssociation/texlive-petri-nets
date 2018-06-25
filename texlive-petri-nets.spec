@@ -1,5 +1,5 @@
 Name:		texlive-petri-nets
-Version:	20170414
+Version:	20180303
 Release:	1
 Summary:	A set TeX/LaTeX packages for drawing Petri nets
 Group:		Publishing
