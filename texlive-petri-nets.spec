@@ -1,12 +1,12 @@
 Name:		texlive-petri-nets
-Version:	20190228
+Version:	39165
 Release:	1
 Summary:	A set TeX/LaTeX packages for drawing Petri nets
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/generic/petri-nets
 License:	GPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/petri-nets.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/petri-nets.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/petri-nets.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/petri-nets.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -20,12 +20,12 @@ the second defines macros related to PBC, M-nets and B(PN)
 models; and - the last gathers together the previous two.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -35,7 +35,7 @@ models; and - the last gathers together the previous two.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
