@@ -1,6 +1,6 @@
 Name:		texlive-petri-nets
 Version:	39165
-Release:	1
+Release:	2
 Summary:	A set TeX/LaTeX packages for drawing Petri nets
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/generic/petri-nets
