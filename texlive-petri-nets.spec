@@ -3,7 +3,7 @@ Version:	39165
 Release:	2
 Summary:	A set TeX/LaTeX packages for drawing Petri nets
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/generic/petri-nets
+URL:		https://www.ctan.org/tex-archive/macros/generic/petri-nets
 License:	GPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/petri-nets.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/petri-nets.doc.r%{version}.tar.xz
