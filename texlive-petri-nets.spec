@@ -1,5 +1,6 @@
 %global tl_name petri-nets
 %global tl_revision 39165
+%global tl_bin_links pn2pdf:%{_texmfdistdir}/scripts/petri-nets/pn2pdf
 
 Name:		texlive-%{tl_name}
 Version:	%{tl_revision}
@@ -14,6 +15,8 @@ BuildArch:	noarch
 BuildSystem:	texlive
 Requires:	texlive(petri-nets.bin)
 Provides:	texlive(%{tl_name}) = %{tl_revision}
+Provides:	texlive(%{tl_name}.bin) = %{tl_revision}
+Provides:	texlive-%{tl_name}.bin = %{EVRD}
 
 %description
 Petri-nets offers a set of TeX/LaTeX packages about Petri nets and
